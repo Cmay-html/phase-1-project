@@ -2,8 +2,8 @@ let parks = [];
 
 //Getting elements
 const parksContainer = getElementById("park-container");
-const countyContainer= getElementById("county-container");
-const activityContainer= getElementById("activity-container");
+const countySelect= getElementById("county-container");
+const activitySelect= getElementById("activity-container");
 const seachInput= getElementById("search-input");
 
 //Fetching Parks from json-server
@@ -14,5 +14,16 @@ fetch('http://localhost:3000/parks')
         renderParks(parks);
     })
     .catch((error) => console.error('Error fetching parks:', error));
+ 
     
-//
+//Event Listeners
+searchInput.addEventListener('input', () => {
+  filterParks();
+});
+countySelect.addEventListener('change', () => {
+  filterParks();
+});
+activitySelect.addEventListener('change', () => {
+  filterParks();
+});
+darkModeToggle.addEventListener('click', toggleDarkMode);
