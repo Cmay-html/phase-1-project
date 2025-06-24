@@ -2,10 +2,10 @@ let parks = [];
 
 //Getting elements
 document.addEventListener('DOMContentLoaded', () => {
-const parksContainer = document.getElementById("park-container");
+const parksContainer = document.getElementById("parks-container");
 const countySelect= document.getElementById("county-container");
 const activitySelect= document.getElementById("activity-container");
-const seachInput= document.getElementById("search-input");
+const searchInput= document.getElementById("search-input");
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 
 //Fetching Parks from json-server
@@ -37,17 +37,23 @@ fetch('http://localhost:3000/parks')
       `;
        parksContainer.appendChild(parkDiv);
     });
-  
+  }
 
-//Event Listeners
-searchInput.addEventListener('input', () => {
+  //Normalize strings for case-insensitive matching
+   function normalize(str) {
+    return str.toLowerCase();
+  }
+
+  //Event Listeners
+  searchInput.addEventListener('input', () => {
   filterParks();
-});
-countySelect.addEventListener('change', () => {
+  });
+  countySelect.addEventListener('change', () => {
   filterParks();
-});
-activitySelect.addEventListener('change', () => {
+  });
+  activitySelect.addEventListener('change', () => {
   filterParks();
+  });
+  darkModeToggle.addEventListener('click', toggleDarkMode);
+ 
 });
-darkModeToggle.addEventListener('click', toggleDarkMode);
-})
