@@ -7,23 +7,30 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>KENYA'S WILDLIFE</hi>
+    <h1>KENYA'S WILDLIFE</h1>
     <h3>CHOOSE YOUT NEXT SAFARI ADVENTURE!</h3>
-    <p id="filter-container">
-        <input type="text" id="search" placeholder="search by park"/>
+    <div id="filter-container">
+        <input type="text" id="search-input" placeholder="search by county or activity"/>
 
-        <p id="county-container">
+        <select id="county-container">
           <option value="all">see all the parks</option>
           <option value="Kajiado">Parks in Kajiado County</option>
           <option value="Samburu">Parks in Samburu County</option>
           <option value="Kirinyaga">Parks in Kirinyaga County</option>
           <option value="Nakuru">Parks in Nakuru County</option>
-        </p>
+        </select>
 
-        <p id="activity-container">
+        <select id="activity-container">
+            <option value="all">Any activity</option>
+            <option value="Bird watching">Bird watching only</option>
+            <option value="Photography">Photography only</option>
+            <option value="Game drives">Game drives only</option>
+        </select>
+    </div>
 
-        </p>
-    </p>
+    <div id="parks-container"></div>
+
+
 
  <script src="index.js"></script>    
 </body>
