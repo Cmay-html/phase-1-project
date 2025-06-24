@@ -5,7 +5,7 @@
       "name": "Amboseli National Park",
       "location": "Kajiado County",
       "wildlife": ["Buffalos","Giraffes","Elephants","Lions"],
-      "activities": [""],
+      "activities": ["Game drives","Mt.Kilimanjaro viewing","Photography"],
       "image": ""
     },
       
@@ -14,7 +14,7 @@
       "name": "Samburu National Reserve",
       "location": "Samburu County County",
       "wildlife": ["Reticulated giraffe","Beisa oryx","Somali ostrich","Gerenuk"],
-      "activities": [""],
+      "activities": ["Photography","Bird Watching","sundowners"],
       "image": ""
     },
     
@@ -23,7 +23,7 @@
       "name": "Mount Kenya National Park",
       "location": "Nairobi County",
       "wildlife": ["Bongo","Tree hyrax","White tailed mongoose"],
-      "activities": [""],
+      "activities": ["Nature walks","Camping","Bird Watching","Photography"],
       "image": ""
     },
       
@@ -32,7 +32,7 @@
       "name": "Lake Nakuru National Park",
       "location": "Nakuru County",
       "wildlife": ["Rothschild's giraffe","White Rhino","Black Rhino"],
-      "activities": [""],
+      "activities": ["Bird Watching","Photography","Pickniking","Waterfalls"],
       "image": ""
     },
    
@@ -41,7 +41,7 @@
       "name": "Tsavo National Parks",
       "location": "Taita-Taveta County",
       "wildlife": ["Red Elephants","Crocodiles","Leopards","Hippos"],
-      "activities": [""],
+      "activities": ["Bird Watching","Waterfalls","Bird Watching","Hiking"],
       "image": ""
     }
   ]   
