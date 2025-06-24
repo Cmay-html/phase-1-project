@@ -20,11 +20,24 @@ fetch('http://localhost:3000/parks')
  //Rendering parks to DOM 
  function renderParks(parks) {
     parksContainer.innerHTML = '';
+
     if (parks.length === 0)  {
         parksContainer.innerHTML = `<p>No such park.</p>`;
         return;
     }
-    
+    parks.forEach(park => {
+        const parkDiv = document.createElement('div');
+        parkDiv.classList.add("park");
+        
+        parkDiv.innerHTML = `
+          <h2>${park.name}</h2>
+        <p><strong>Location:</strong> ${park.location}</p>
+        <p><strong>Wildlife:</strong> ${park.wildlife.join(', ')}</p>
+        <p><strong>Activities:</strong> ${park.activities.join(', ')}</p>
+      `;
+       parksContainer.appendChild(parkDiv);
+    });
+  
 
 //Event Listeners
 searchInput.addEventListener('input', () => {
