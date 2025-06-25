@@ -1,26 +1,22 @@
 # 
 
 ## DESCRIPTION 
-The Simple Blog Post Manager is a lightweight, beginner-friendly web application that allows users to create, view, update, and delete blog posts — all from a clean, responsive interface. Built with HTML, CSS, and JavaScript, it connects to a JSON-powered backend and provides instant updates using json-server. Perfect for travellers who want help to decide which park to visit in Kenya.
+A single-page web application showcasing Kenya’s rich national park landscapes and wildlife. Users can explore parks by location or activity, view animal details, and even add new parks — all on a sleek, interactive interface.
 ---
 
 ## FEATURES 
 
-- Update  
-  Submit a blog post with a title, content, and author name via an intuitive form.
+- Browse national parks across Kenya
 
-- Live Post Preview  
-  Search on a park or activity to view full details, including an images.
+- Filter parks by county or activity
 
-- Edit Posts. 
-  Update content with an inline editor, no page reloads required.
+- Add new parks dynamically
 
-- Delete with a Click  
-  Remove unwanted posts instantly through the built-in delete button.
+- Dark mode toggle for extra safari vibes
 
-- Image Support  
-  Each post can display a featured image loaded from the local project folder.
+- Smooth styling with clean layout
 
+- Asynchronous fetch requests to a mock API (db.json via JSON Server)
 ---
 
 ## HOW TO USE THE APPLICATION 
@@ -70,8 +66,14 @@ Backend:  http://localhost:3000/posts
 ---
 
 ## User Experience
+ 
+- Form usability: Adding a new park is simple, with labels and placeholder hints guiding user input.
 
-- Make sure your images are saved in the /images folder and listed properly in db.json.
+- Visual clarity: Clean typography and section spacing make reading and interaction effortless.
+
+- Dark mode support: A toggle button allows users to switch to dark mode for better viewing comfort.
+
+- Single-page experience: Users can explore everything without being redirected or losing context.
 
 ---
 

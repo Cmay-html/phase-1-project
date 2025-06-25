@@ -22,7 +22,6 @@
         "images/Mt-Kilimanjaro.jpeg",
         "images/buffalo.webp"
       ]
-      
     },
     {
       "id": "2",
@@ -39,14 +38,13 @@
         "Bird Watching",
         "sundowners"
       ],
-    "images": [
-      "images/somali-ostrich.jpg",
-      "images/Grevys-zebra.jpg",
-      "images/Oryx_beisa.jpg",
-      "images/Reticulated-Giraffe.jpg",
-       "images/gerenuk.png"
-      
-    ]
+      "images": [
+        "images/somali-ostrich.jpg",
+        "images/Grevys-zebra.jpg",
+        "images/Oryx_beisa.jpg",
+        "images/Reticulated-Giraffe.jpg",
+        "images/gerenuk.png"
+      ]
     },
     {
       "id": "3",
@@ -55,7 +53,8 @@
       "wildlife": [
         "Bongo",
         "Tree hyrax",
-        "White tailed mongoose"
+        "White tailed mongoose",
+        "Cheetah"
       ],
       "activities": [
         "Nature walks",
@@ -64,10 +63,11 @@
         "Photography"
       ],
       "images": [
-          "images/bongo.jpg",
-          "images/tree-hyrax.jpeg",
-          "images/white-tailed-mongoose.jpg",
-          "images/camping.jpeg"
+        "images/bongo.jpg",
+        "images/tree-hyrax.jpeg",
+        "images/white-tailed-mongoose.jpg",
+        "images/camping.jpeg",
+        "images/cheetah.gif"
       ]
     },
     {
@@ -77,7 +77,9 @@
       "wildlife": [
         "Rothschild's giraffe",
         "White Rhino",
-        "Black Rhino"
+        "Black Rhino",
+        "Hippopotamus",
+        "Pink flamingos"
       ],
       "activities": [
         "Bird Watching",
@@ -88,8 +90,27 @@
       "images": [
         "images/black-rhino.webp",
         "images/white-rhino.jpeg",
-        "images/waterfalls.jpeg"
+        "images/waterfalls.jpeg",
+        "images/hippo.jpeg",
+        "images/pink-flamingos.jpg"
       ]
+    },
+    {
+      "id": "f372",
+      "name": "Maasai Mara National Park",
+      "location": "Narok County",
+      "wildlife": [
+        "Rothschild's giraffe",
+        "White Rhino",
+        "Black Rhino"
+      ],
+      "activities": [
+        "Bird Watching",
+        "Photography",
+        "Pickniking",
+        "Waterfalls]"
+      ],
+      "images": []
     }
   ]
 }

@@ -93,7 +93,9 @@ document.addEventListener("DOMContentLoaded", function() {
       location: newForm.location.value,
       wildlife: newForm.wildlife.value.split(",").map(w => w.trim()),
       activities: newForm.activities.value.split(",").map(a => a.trim()),
-      image: newForm.image.value
+      images: newForm.images.value
+       ? newForm.images.value.split(",").map(i => i.trim())
+  : []
     };
 
     fetch("http://localhost:3000/parks", {
