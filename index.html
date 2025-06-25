@@ -29,21 +29,25 @@
     </div>
     <div id="button-container">
       <form id="new-form">
-        <h3>Add</h3>
-        <input type="text" name="title" placeholder="Park Name" required /><br><br>
-        <textarea name="content" placeholder="Park content" required></textarea><br>
+        <h3>Add Park</h3>
+        <input type="text" name="name" placeholder="Park Name" required /><br><br>
+        <input type="text" name="location" placeholder="Location (County)" required /><br><br>
+        <input type="text" name="wildlife" placeholder="Wildlife (comma separated)" /><br><br>
+        <input type="text" name="activities" placeholder="Activities (comma separated)" /><br><br>
+        <input type="url" name="image" placeholder="Image URL" /><br><br>
         <button type="submit">Add</button>
-      </form><br>
+      </form>
 
       <form id="edit-form" class="hidden">
-         <h4>Update Park Details</h4>
-         <label for="edit-title">Title:</label>
-         <input type="text" name="title" id="edit-title" /><br><br>
-         <label for="edit-content">Content:</label><br>
-         <textarea name="content" id="edit-content" rows="4"></textarea><br>
-         <button type="submit">Update Post</button><br><br>
+         <h4>Edit Park Details</h4>
+         <input type="text" name="name" placeholder="Park Name" required /><br><br>
+         <input type="text" name="location" placeholder="Location (County)" required /><br><br>
+         <input type="text" name="wildlife" placeholder="Wildlife (comma separated)" /><br><br>
+         <input type="text" name="activities" placeholder="Activities (comma separated)" /><br><br>
+         <input type="url" name="image" placeholder="Image URL" /><br><br>
+         <button type="submit">Save</button>
          <button type="button" id="cancel-edit">Cancel</button>
-     </form>
+</form>
 
     </div>
 
