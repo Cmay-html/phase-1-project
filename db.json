@@ -15,9 +15,11 @@
         "Mt.Kilimanjaro viewing",
         "Photography"
       ],
-      "image": [
+      "images": [
         "images/flamingos.avif",
-        "images/Game-drive-at-Masai-mara.jpg"
+        "images/Game-drive-at-Masai-mara.jpg",
+        "images/giraffe.jpg",
+        "images/Mt-Kilimanjaro.jpeg"
       ]
       
     },
@@ -36,7 +38,7 @@
         "Bird Watching",
         "sundowners"
       ],
-      "image": ""
+      "images": ""
     },
     {
       "id": "3",
@@ -53,7 +55,7 @@
         "Bird Watching",
         "Photography"
       ],
-      "image": ""
+      "images": ""
     },
     {
       "id": "4",
@@ -70,7 +72,7 @@
         "Pickniking",
         "Waterfalls"
       ],
-      "image": ""
+      "images": ""
     }
   ]
 }

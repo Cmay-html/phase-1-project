@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Show parks on screen
   function showParks(parksList) {
-    parksContainer.innerHTML = ""; // Clear what's already there
+    parksContainer.innerHTML = "";
 
     if (parksList.length === 0) {
       parksContainer.innerHTML = "<p>No parks found.</p>";
@@ -41,9 +41,19 @@ document.addEventListener("DOMContentLoaded", function() {
       const card = document.createElement("div");
       card.className = "park";
 
+       // Create image HTML if there are multiple image URLs
+    let imageHTML = "";
+    if (park.images && park.images.length > 0) {
+      imageHTML = park.images.map(url =>
+        `<img src="${url}" alt="${park.name}" style="max-width:300px; margin-bottom:10px;" />`
+      ).join('');
+    }
+
       card.innerHTML = `
         <h2>${park.name}</h2>
-        ${park.image ? `<img src="${park.image}" alt="${park.name}" style="max-width:300px;" />` : ''}
+        ${park.images && park.images.length ? park.images.map(url => 
+       `<img src="${url}" alt="${park.name}" style="max-width:300px; margin-bottom:10px;" />`
+            ).join('') : ''}
         <p><strong>Location:</strong> ${park.location}</p>
         <p><strong>Wildlife:</strong> ${park.wildlife.join(", ")}</p>
         <p><strong>Activities:</strong> ${park.activities.join(", ")}</p>
