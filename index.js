@@ -1,99 +1,176 @@
+// A list to keep all the parks
 let parks = [];
 let currentEditIndex = null;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const parksContainer = document.getElementById('parks-container');
-  const newForm = document.getElementById('new-form');
-  const editForm = document.getElementById('edit-form');
-  const cancelEditBtn = document.getElementById('cancel-edit');
+document.addEventListener("DOMContentLoaded", function() {
+  // Grab page elements
+  const parksContainer = document.getElementById("parks-container");
+  const countyFilter = document.getElementById("county-container");
+  const activityFilter = document.getElementById("activity-container");
+  const searchInput = document.getElementById("search-input");
+  const darkModeBtn = document.getElementById("dark-mode-toggle");
 
-  // Display parks
-  function displayParks(parksToDisplay) {
-    parksContainer.innerHTML = '';
-    if (parksToDisplay.length === 0) {
-      parksContainer.innerHTML = '<p>No parks found.</p>';
+  const newForm = document.getElementById("new-form");
+  const editForm = document.getElementById("edit-form");
+  const cancelEdit = document.getElementById("cancel-edit");
+
+  // Load parks from the server
+  function loadParks() {
+    fetch("http://localhost:3000/parks")
+      .then(res => res.json())
+      .then(data => {
+        parks = data;
+        showFilteredParks();
+      })
+      .catch(err => {
+        console.log("Problem loading parks:", err);
+        parksContainer.innerHTML = "<p>Oops! Could not load parks.</p>";
+      });
+  }
+
+  // Show parks on screen
+  function showParks(parksList) {
+    parksContainer.innerHTML = ""; // Clear what's already there
+
+    if (parksList.length === 0) {
+      parksContainer.innerHTML = "<p>No parks found.</p>";
       return;
     }
-    parksToDisplay.forEach((park, index) => {
-      const parkDiv = document.createElement('div');
-      parkDiv.classList.add('park');
-      parkDiv.innerHTML = `
+
+    parksList.forEach((park, index) => {
+      const card = document.createElement("div");
+      card.className = "park";
+
+      card.innerHTML = `
         <h2>${park.name}</h2>
-        ${park.image ? `<img src="${park.image}" alt="${park.name}" style="max-width:300px; max-height:200px;" />` : ''}
+        ${park.image ? `<img src="${park.image}" alt="${park.name}" style="max-width:300px;" />` : ''}
         <p><strong>Location:</strong> ${park.location}</p>
-        <p><strong>Wildlife:</strong> ${park.wildlife.join(', ')}</p>
-        <p><strong>Activities:</strong> ${park.activities.join(', ')}</p>
+        <p><strong>Wildlife:</strong> ${park.wildlife.join(", ")}</p>
+        <p><strong>Activities:</strong> ${park.activities.join(", ")}</p>
         <button class="edit-btn" data-index="${index}">Edit</button>
+        <button class="delete-btn" data-index="${index}">Delete</button>
       `;
-      parksContainer.appendChild(parkDiv);
+
+      parksContainer.appendChild(card);
     });
   }
 
-  // Show edit form
-  function showEditForm(index) {
-    currentEditIndex = index;
-    const park = parks[index];
-    editForm.name.value = park.name;
-    editForm.location.value = park.location;
-    editForm.wildlife.value = park.wildlife.join(', ');
-    editForm.activities.value = park.activities.join(', ');
-    editForm.image.value = park.image || '';
-    editForm.classList.remove('hidden');
-    newForm.classList.add('hidden');
+  // Filter based on user input
+  function showFilteredParks() {
+    const county = countyFilter.value.toLowerCase();
+    const activity = activityFilter.value.toLowerCase();
+    const keyword = searchInput.value.toLowerCase();
+
+    const filtered = parks.filter(park => {
+      const inCounty = county === "all" || park.location.toLowerCase().includes(county);
+      const hasActivity = activity === "all" || park.activities.some(a => a.toLowerCase() === activity);
+      const matchesSearch = park.name.toLowerCase().includes(keyword) ||
+        park.location.toLowerCase().includes(keyword) ||
+        park.wildlife.some(w => w.toLowerCase().includes(keyword)) ||
+        park.activities.some(a => a.toLowerCase().includes(keyword));
+
+      return inCounty && hasActivity && matchesSearch;
+    });
+
+    showParks(filtered);
   }
 
-  // Hide edit form
-  function hideEditForm() {
-    currentEditIndex = null;
-    editForm.reset();
-    editForm.classList.add('hidden');
-    newForm.classList.remove('hidden');
-  }
-
-  // Add park
-  newForm.addEventListener('submit', e => {
+  // When user submits new park form
+  newForm.addEventListener("submit", function(e) {
     e.preventDefault();
+
     const newPark = {
-      id: parks.length ? parks[parks.length - 1].id + 1 : 1, // simple id increment
-      name: newForm.name.value.trim(),
-      location: newForm.location.value.trim(),
-      wildlife: newForm.wildlife.value.split(',').map(w => w.trim()).filter(Boolean),
-      activities: newForm.activities.value.split(',').map(a => a.trim()).filter(Boolean),
-      image: newForm.image.value.trim()
+      name: newForm.name.value,
+      location: newForm.location.value,
+      wildlife: newForm.wildlife.value.split(",").map(w => w.trim()),
+      activities: newForm.activities.value.split(",").map(a => a.trim()),
+      image: newForm.image.value
     };
-    parks = [...parks, newPark];
-    newForm.reset();
-    displayParks(parks);
+
+    fetch("http://localhost:3000/parks", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newPark)
+    })
+    .then(() => {
+      loadParks();
+      newForm.reset();
+    })
+    .catch(() => alert("Failed to add park."));
   });
 
-  // Edit park
-  editForm.addEventListener('submit', e => {
-    e.preventDefault();
-    if (currentEditIndex === null) return;
-    const updatedPark = {
-      ...parks[currentEditIndex],
-      name: editForm.name.value.trim(),
-      location: editForm.location.value.trim(),
-      wildlife: editForm.wildlife.value.split(',').map(w => w.trim()).filter(Boolean),
-      activities: editForm.activities.value.split(',').map(a => a.trim()).filter(Boolean),
-      image: editForm.image.value.trim()
-    };
-    parks = parks.map((p, i) => (i === currentEditIndex ? updatedPark : p));
-    hideEditForm();
-    displayParks(parks);
-  });
+  // Edit button clicked
+  parksContainer.addEventListener("click", function(e) {
+    const index = e.target.dataset.index;
 
-  // Cancel edit
-  cancelEditBtn.addEventListener('click', hideEditForm);
+    if (e.target.classList.contains("edit-btn")) {
+      currentEditIndex = index;
+      const park = parks[index];
 
-  // Event delegation for edit buttons
-  parksContainer.addEventListener('click', e => {
-    if (e.target.classList.contains('edit-btn')) {
-      const index = parseInt(e.target.dataset.index, 10);
-      showEditForm(index);
+      editForm.name.value = park.name;
+      editForm.location.value = park.location;
+      editForm.wildlife.value = park.wildlife.join(", ");
+      editForm.activities.value = park.activities.join(", ");
+      editForm.image.value = park.image;
+
+      newForm.classList.add("hidden");
+      editForm.classList.remove("hidden");
+    }
+
+    if (e.target.classList.contains("delete-btn")) {
+      const parkId = parks[index].id;
+      fetch(`http://localhost:3000/parks/${parkId}`, {
+        method: "DELETE"
+      })
+      .then(() => loadParks())
+      .catch(() => alert("Could not delete park."));
     }
   });
 
-  // Initial display
-  displayParks(parks);
+  // Cancel editing
+  cancelEdit.addEventListener("click", function() {
+    currentEditIndex = null;
+    editForm.reset();
+    editForm.classList.add("hidden");
+    newForm.classList.remove("hidden");
+  });
+
+  // Submit updated park
+  editForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const park = parks[currentEditIndex];
+
+    const updated = {
+      ...park,
+      name: editForm.name.value,
+      location: editForm.location.value,
+      wildlife: editForm.wildlife.value.split(",").map(w => w.trim()),
+      activities: editForm.activities.value.split(",").map(a => a.trim()),
+      image: editForm.image.value
+    };
+
+    fetch(`http://localhost:3000/parks/${park.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updated)
+    })
+    .then(() => {
+      loadParks();
+      cancelEdit.click();
+    })
+    .catch(() => alert("Update failed."));
+  });
+
+  // Filter when inputs change
+  searchInput.addEventListener("input", showFilteredParks);
+  countyFilter.addEventListener("change", showFilteredParks);
+  activityFilter.addEventListener("change", showFilteredParks);
+
+  // Toggle dark mode
+  darkModeBtn.addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+  });
+
+  // Load parks when the page is ready
+  loadParks();
 });

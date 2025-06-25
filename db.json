@@ -1,40 +1,76 @@
 {
   "parks": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Amboseli National Park",
       "location": "Kajiado County",
-      "wildlife": ["Buffalos","Giraffes","Elephants","Lions"],
-      "activities": ["Game drives","Mt.Kilimanjaro viewing","Photography"],
-      "image": ""
-    },
+      "wildlife": [
+        "Buffalos",
+        "Giraffes",
+        "Elephants",
+        "Lions"
+      ],
+      "activities": [
+        "Game drives",
+        "Mt.Kilimanjaro viewing",
+        "Photography"
+      ],
+      "image": [
+        "images/flamingos.avif",
+        "images/Game-drive-at-Masai-mara.jpg"
+      ]
       
+    },
     {
-      "id": 2,
+      "id": "2",
       "name": "Samburu National Reserve",
       "location": "Samburu County",
-      "wildlife": ["Reticulated giraffe","Beisa oryx","Somali ostrich","Gerenuk"],
-      "activities": ["Photography","Bird Watching","sundowners"],
+      "wildlife": [
+        "Reticulated giraffe",
+        "Beisa oryx",
+        "Somali ostrich",
+        "Gerenuk"
+      ],
+      "activities": [
+        "Photography",
+        "Bird Watching",
+        "sundowners"
+      ],
       "image": ""
     },
-    
     {
-      "id": 3,
+      "id": "3",
       "name": "Mount Kenya National Park",
       "location": "Kirinyaga County",
-      "wildlife": ["Bongo","Tree hyrax","White tailed mongoose"],
-      "activities": ["Nature walks","Camping","Bird Watching","Photography"],
+      "wildlife": [
+        "Bongo",
+        "Tree hyrax",
+        "White tailed mongoose"
+      ],
+      "activities": [
+        "Nature walks",
+        "Camping",
+        "Bird Watching",
+        "Photography"
+      ],
       "image": ""
     },
-      
     {
-      "id": 4,
+      "id": "4",
       "name": "Lake Nakuru National Park",
       "location": "Nakuru County",
-      "wildlife": ["Rothschild's giraffe","White Rhino","Black Rhino"],
-      "activities": ["Bird Watching","Photography","Pickniking","Waterfalls"],
+      "wildlife": [
+        "Rothschild's giraffe",
+        "White Rhino",
+        "Black Rhino"
+      ],
+      "activities": [
+        "Bird Watching",
+        "Photography",
+        "Pickniking",
+        "Waterfalls"
+      ],
       "image": ""
     }
-
-  ]   
+  ]
 }
