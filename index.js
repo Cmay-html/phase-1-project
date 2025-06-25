@@ -51,9 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       card.innerHTML = `
         <h2>${park.name}</h2>
-        ${park.images && park.images.length ? park.images.map(url => 
-       `<img src="${url}" alt="${park.name}" style="max-width:300px; margin-bottom:10px;" />`
-            ).join('') : ''}
+        ${imageHTML}
         <p><strong>Location:</strong> ${park.location}</p>
         <p><strong>Wildlife:</strong> ${park.wildlife.join(", ")}</p>
         <p><strong>Activities:</strong> ${park.activities.join(", ")}</p>
@@ -121,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
       editForm.location.value = park.location;
       editForm.wildlife.value = park.wildlife.join(", ");
       editForm.activities.value = park.activities.join(", ");
-      editForm.image.value = park.image;
+      editForm.images.value = park.images;
 
       newForm.classList.add("hidden");
       editForm.classList.remove("hidden");
@@ -156,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
       location: editForm.location.value,
       wildlife: editForm.wildlife.value.split(",").map(w => w.trim()),
       activities: editForm.activities.value.split(",").map(a => a.trim()),
-      image: editForm.image.value
+      images: editForm.images.value
     };
 
     fetch(`http://localhost:3000/parks/${park.id}`, {
