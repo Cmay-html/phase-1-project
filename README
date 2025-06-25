@@ -1,10 +1,10 @@
 # 
 
 ## DESCRIPTION 
-A single-page web application showcasing Kenya’s rich national park landscapes and wildlife. Users can explore parks by location or activity, view animal details, and even add new parks — all on a sleek, interactive interface.
----
+A single-page web application showcasing Kenya’s rich national park landscapes and wildlife. Users can explore parks by location or activity, view animal details, and even add new parks .
 
-## FEATURES 
+## FEATURES e interface.
+---
 
 - Browse national parks across Kenya
 
@@ -31,7 +31,7 @@ Visit the deployed application at:
  https://cmay-html.github.io/phase-1-project/
  
 The site allows you to:
-- Search based on parks and activities for easy acces of interests.
+- Search based on parks and activities for easy access of interests.
 - View parks ,animals and activities in each park.
 - Click 'Edit' to update details.
 - Click 'Delete' to remove details.
