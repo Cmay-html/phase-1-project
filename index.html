@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>KENYA NATIONAL WILDLIFE</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -26,6 +26,25 @@
             <option value="Photography">Photography only</option>
             <option value="Game drives">Game drives only</option>
         </select>
+    </div>
+    <div id="button-container">
+      <form id="new-form">
+        <h3>Add</h3>
+        <input type="text" name="title" placeholder="Park Name" required /><br><br>
+        <textarea name="content" placeholder="Park content" required></textarea><br>
+        <button type="submit">Add</button>
+      </form><br>
+
+      <form id="edit-form" class="hidden">
+         <h4>Update Park Details</h4>
+         <label for="edit-title">Title:</label>
+         <input type="text" name="title" id="edit-title" /><br><br>
+         <label for="edit-content">Content:</label><br>
+         <textarea name="content" id="edit-content" rows="4"></textarea><br>
+         <button type="submit">Update Post</button><br><br>
+         <button type="button" id="cancel-edit">Cancel</button>
+     </form>
+
     </div>
 
     <div id="parks-container"></div>

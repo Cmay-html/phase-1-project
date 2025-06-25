@@ -36,8 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <p><strong>Location:</strong> ${park.location}</p>
         <p><strong>Wildlife:</strong> ${park.wildlife.join(', ')}</p>
         <p><strong>Activities:</strong> ${park.activities.join(', ')}</p>
+        <button class="edit-btn">Edit</button>
       `;
-
+     
       parksContainer.appendChild(parkDiv);
     });
   }
