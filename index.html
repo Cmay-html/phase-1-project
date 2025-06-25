@@ -30,23 +30,45 @@
     <div id="button-container">
       <form id="new-form">
         <h3>Add Park</h3>
-        <input type="text" name="name" placeholder="Park Name" required /><br><br>
-        <input type="text" name="location" placeholder="Location (County)" required /><br><br>
-        <input type="text" name="wildlife" placeholder="Wildlife (comma separated)" /><br><br>
-        <input type="text" name="activities" placeholder="Activities (comma separated)" /><br><br>
-        <input type="url" name="images" placeholder="Images URL" /><br><br>
+
+        <label for="new-name">Park Name</label>
+        <input type="text" id="new-name" name="name" placeholder="Park Name" required /><br><br>
+
+        <label for="new-location">Location (County)</label>
+        <input type="text" id="new-location" name="location" placeholder="Location (County)" required /><br><br>
+
+        <label for="new-wildlife">Wildlife (comma separated)</label>
+        <input type="text" id="new-wildlife" name="wildlife" placeholder="Wildlife (comma separated)" /><br><br>
+
+        <label for="new-activities">Activities (comma separated)</label>
+        <input type="text" id="new-activities" name="activities" placeholder="Activities (comma separated)" /><br><br>
+
+        <label for="new-images">Images URL (comma separated)</label>
+        <input type="url" id="new-images" name="images" placeholder="Images URL" /><br><br>
+
         <button type="submit">Add</button>
       </form>
 
       <form id="edit-form" class="hidden">
-         <h4>Edit Park Details</h4>
-         <input type="text" name="name" placeholder="Park Name" required /><br><br>
-         <input type="text" name="location" placeholder="Location (County)" required /><br><br>
-         <input type="text" name="wildlife" placeholder="Wildlife (comma separated)" /><br><br>
-         <input type="text" name="activities" placeholder="Activities (comma separated)" /><br><br>
-         <input type="url" name="images" placeholder="Images URL" /><br><br>
-         <button type="submit">Save</button>
-         <button type="button" id="cancel-edit">Cancel</button>
+        <h4>Edit Park Details</h4>
+
+        <label for="edit-name">Park Name</label>
+        <input type="text" id="edit-name" name="name" placeholder="Park Name" required /><br><br>
+
+        <label for="edit-location">Location (County)</label>
+        <input type="text" id="edit-location" name="location" placeholder="Location (County)" required /><br><br>
+
+        <label for="edit-wildlife">Wildlife (comma separated)</label>
+        <input type="text" id="edit-wildlife" name="wildlife" placeholder="Wildlife (comma separated)" /><br><br>
+
+        <label for="edit-activities">Activities (comma separated)</label>
+        <input type="text" id="edit-activities" name="activities" placeholder="Activities (comma separated)" /><br><br>
+
+        <label for="edit-images">Images URL (comma separated)</label>
+        <input type="url" id="edit-images" name="images" placeholder="Images URL" /><br><br>
+
+        <button type="submit">Save</button>
+        <button type="button" id="cancel-edit">Cancel</button>
       </form>
 
     </div>
