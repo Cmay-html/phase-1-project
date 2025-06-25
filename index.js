@@ -45,7 +45,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let imageHTML = "";
     if (park.images && park.images.length > 0) {
       imageHTML = park.images.map(url =>
-        `<img src="${url}" alt="${park.name}" style="max-width:300px; margin-bottom:10px;" />`
+        `<img src="${url}" alt="${park.name}" style="max-width:300px; margin: 0 10px 10px 0; display: inline-block;" />
+`
       ).join('');
     }
 

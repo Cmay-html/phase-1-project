@@ -39,7 +39,14 @@
         "Bird Watching",
         "sundowners"
       ],
-      "images": ""
+    "images": [
+      "images/somali-ostrich.jpg",
+      "images/Grevys-zebra.jpg",
+      "images/Oryx_beisa.jpg",
+      "images/Reticulated-Giraffe.jpg",
+       "images/gerenuk.png"
+      
+    ]
     },
     {
       "id": "3",
@@ -56,7 +63,12 @@
         "Bird Watching",
         "Photography"
       ],
-      "images": ""
+      "images": [
+          "images/bongo.jpg",
+          "images/tree-hyrax.jpeg",
+          "images/white-tailed-mongoose.jpg",
+          "images/camping.jpeg"
+      ]
     },
     {
       "id": "4",
@@ -73,7 +85,10 @@
         "Pickniking",
         "Waterfalls"
       ],
-      "images": ""
+      "images": [
+        "images/black-rhino.webp",
+        "images"
+      ]
     }
   ]
 }
