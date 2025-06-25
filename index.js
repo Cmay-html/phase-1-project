@@ -30,15 +30,18 @@ fetch('http://localhost:3000/parks')
         parkDiv.classList.add("park");
         
         parkDiv.innerHTML = `
-          <h2>${park.name}</h2>
-        <p><strong>Location:</strong> ${park.location}</p>
-        <p><strong>Wildlife:</strong> ${park.wildlife.join(', ')}</p>
-        <p><strong>Activities:</strong> ${park.activities.join(', ')}</p>
+         <h2>${park.name}</h2>
+         <img src="${park.image}" alt="Image of ${park.name}" />
+         <p><strong>Location:</strong> ${park.location}</p>
+         <p><strong>Wildlife:</strong> ${park.wildlife.join(', ')}</p>
+         <p><strong>Activities:</strong> ${park.activities.join(', ')}</p>
       `;
        parksContainer.appendChild(parkDiv);
     });
   }
-
+   
+  //Applying Filters
+ 
   //Normalize strings for case-insensitive matching
    function normalize(str) {
     return str.toLowerCase();
@@ -56,4 +59,5 @@ fetch('http://localhost:3000/parks')
   });
   darkModeToggle.addEventListener('click', toggleDarkMode);
  
+  fetchParks();
 });

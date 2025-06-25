@@ -1,0 +1,95 @@
+# 
+
+## DESCRIPTION 
+The Simple Blog Post Manager is a lightweight, beginner-friendly web application that allows users to create, view, update, and delete blog posts — all from a clean, responsive interface. Built with HTML, CSS, and JavaScript, it connects to a JSON-powered backend and provides instant updates using json-server. Perfect for travellers who want help to decide which park to visit in Kenya.
+---
+
+## FEATURES 
+
+- Update  
+  Submit a blog post with a title, content, and author name via an intuitive form.
+
+- Live Post Preview  
+  Search on a park or activity to view full details, including an images.
+
+- Edit Posts. 
+  Update content with an inline editor, no page reloads required.
+
+- Delete with a Click  
+  Remove unwanted posts instantly through the built-in delete button.
+
+- Image Support  
+  Each post can display a featured image loaded from the local project folder.
+
+---
+
+## HOW TO USE THE APPLICATION 
+
+### Requirements
+- A computer, tablet, or phone  
+- Access to the internet  
+- A modern web browser  
+
+### View Live Site  
+Visit the deployed application at:  
+ https://cmay-html.github.io/phase-1-project/
+ 
+The site allows you to:
+- Search based on parks and activities for easy acces of interests.
+- View parks ,animals and activities in each park.
+- Click 'Edit' to update details.
+- Click 'Delete' to remove details.
+
+
+### Local Development
+If you want to run the project locally, you'll need:
+- Node.js installed on your computer  
+- Basic understanding of React JS  
+- Code editor (VS Code recommended)  
+- Terminal/Command Line  
+
+### Installation Process
+Clone this repository using:  
+`git clone git@github.com:Cmay-html/phase-1-project.git`  
+or by downloading a ZIP file of the code.
+
+Navigate to the project directory:  
+`cd phase-1-project`
+
+Install the required dependencies:  
+`npm install -g json-server`
+
+Run the backend server using db.json:  
+`json-server --watch db.json`
+
+# Now open your browser to:
+Frontend: http://127.0.0.1:5500/index.html
+Backend:  http://localhost:3000/posts
+
+
+---
+
+## User Experience
+
+- Make sure your images are saved in the /images folder and listed properly in db.json.
+
+---
+
+## Technologies Used
+- JavaScript (ES6)  
+- HTML5 
+- CSS3 
+- db.json
+
+---
+
+## Summary
+. With responsive design, hover interactions, and image support, it combines front-end functionality with a simulated backend. Ideal for practicing frontend dev skills and exploring how data-driven interfaces work.
+
+---
+
+## Support and Contact Details
+If you have any questions, suggestions, or need assistance, please contact:  
+- Email: cynthialairumbe@gmail.com
+
+---
