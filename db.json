@@ -94,23 +94,6 @@
         "images/hippo.jpeg",
         "images/pink-flamingos.jpg"
       ]
-    },
-    {
-      "id": "f372",
-      "name": "Maasai Mara National Park",
-      "location": "Narok County",
-      "wildlife": [
-        "Rothschild's giraffe",
-        "White Rhino",
-        "Black Rhino"
-      ],
-      "activities": [
-        "Bird Watching",
-        "Photography",
-        "Pickniking",
-        "Waterfalls]"
-      ],
-      "images": []
     }
   ]
 }
