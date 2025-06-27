@@ -111,13 +111,12 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Edit button clicked
-  parksContainer.addEventListener("click", function(e) {
+parksContainer.addEventListener("click", function(e) {
     const index = e.target.dataset.index;
 
     if (e.target.classList.contains("edit-btn")) {
       currentEditIndex = index;
       const park = parks[index];
-
       editForm.name.value = park.name;
       editForm.location.value = park.location;
       editForm.wildlife.value = park.wildlife.join(", ");
@@ -126,8 +125,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
       newForm.classList.add("hidden");
       editForm.classList.remove("hidden");
-    }
 
+      editForm.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    
+
+      
     if (e.target.classList.contains("delete-btn")) {
       const parkId = parks[index].id;
       fetch(`http://localhost:3000/parks/${parkId}`, {
@@ -181,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
   darkModeBtn.addEventListener("click", function() {
     document.body.classList.toggle("dark-mode");
   });
-
+  
   // Load parks when the page is ready
   loadParks();
 });

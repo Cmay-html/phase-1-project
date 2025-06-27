@@ -36,7 +36,7 @@ input, select, button {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  outline: 1px solid #228B22; /* thinner and solid */
+  outline: 1px solid #228B22; 
   outline-offset: 2px; 
 }
 
@@ -51,7 +51,7 @@ button:hover {
   background-color: #006400;
 }
 
-/* Park Cards */
+
 .park {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -68,12 +68,10 @@ button:hover {
   border-radius: 4px;
 }
 
-/* Hide the edit form by default */
 .hidden {
   display: none;
 }
 
-/* Dark Mode */
 .dark-mode {
   background-color: #1a1a1a;
   color: #f2f2f2;
