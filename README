@@ -1,4 +1,4 @@
-# KENYA WILDLIFE 
+# KENYA WILDLIFE PARKS EXPLORER 
 
 ## DESCRIPTION 
 A single-page web application showcasing Kenya’s rich national park landscapes and wildlife. Users can explore parks by location or activity, view animal details, and even add new parks .
@@ -39,10 +39,10 @@ The site allows you to:
 
 ### Local Development
 If you want to run the project locally, you'll need:
-- Node.js installed on your computer  
-- Basic understanding of React JS  
-- Code editor (VS Code recommended)  
-- Terminal/Command Line  
+- Node.js installed
+- Any code editor (e.g., VS Code)
+- Terminal or command line
+- Live Server extension OR use `http-server`
 
 ### Installation Process
 Clone this repository using:  
@@ -56,12 +56,12 @@ Install the required dependencies:
 `npm install -g json-server`
 
 Run the backend server using db.json:  
-`json-server --watch db.json`
+`json-server --watch db.json
 
-# Now open your browser to:
-Frontend: http://127.0.0.1:5500/index.html
-Backend:  http://localhost:3000/posts
-
+### View Live Site  
+### View Live Site  
+- Frontend: [https://cmay-html.github.io/phase-1-project/](https://cmay-html.github.io/phase-1-project/)  
+- Backend API: [https://phase-1-project-4-l7y8.onrender.com/parks](https://phase-1-project-4-l7y8.onrender.com/parks)
 
 ---
 
